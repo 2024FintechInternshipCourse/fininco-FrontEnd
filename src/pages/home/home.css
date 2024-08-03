@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.notifications,
+.menu {
+  font-size: 24px;
+}
+
+.exchange-rate-section {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.exchange-rate-cards {
+  display: flex;
+  justify-content: space-around;
+}

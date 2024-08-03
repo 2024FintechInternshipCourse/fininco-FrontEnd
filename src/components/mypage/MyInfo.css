@@ -1,0 +1,46 @@
+.info-wrapper {
+  padding: 20px;
+  background-color: #ffffff;
+  height: 92vh;
+  overflow-y: auto;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-icon {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.info-header span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info-content h2 {
+  margin: 20px 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-content li {
+  padding: 15px 0;
+  border-bottom: 1px solid #afafaf;
+  cursor: pointer;
+}
+
+.info-content li:hover {
+  background-color: #f6f6f6;
+}

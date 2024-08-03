@@ -1,0 +1,46 @@
+.notice-wrapper {
+  padding: 20px;
+  background-color: #ffffff;
+  height: 92vh;
+  overflow-y: auto;
+}
+
+.notice-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-icon {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.notice-header span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.notice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notice-item {
+  border-bottom: 1px solid #afafaf;
+  padding: 10px 0;
+}
+
+.notice-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.notice-item p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: gray;
+}
