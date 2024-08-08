@@ -1,0 +1,152 @@
+.krw-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.krw-header {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.back-arrow {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.currency-info {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+  background-color: azure;
+}
+
+.currency-flag {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.currency-name {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.currency-rate {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.currency-change {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.change-value {
+  color: red;
+  margin-right: 5px;
+}
+
+.change-percent {
+  color: red;
+}
+
+.balance-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.transfer-button,
+.recharge-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.transfer-button {
+  background-color: lightgray;
+}
+
+.recharge-button {
+  background-color: lightblue;
+}
+
+.time-periods {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.transactions {
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.transaction-date {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.transaction-flag {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.transaction-info {
+  flex-grow: 1;
+}
+
+.transaction-type {
+  font-size: 16px;
+}
+
+.transaction-rate {
+  font-size: 14px;
+  color: gray;
+}
+
+.transaction-time {
+  font-size: 14px;
+  color: gray;
+}
+
+.transaction-amount {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.transaction-total {
+  font-size: 16px;
+  font-weight: bold;
+}

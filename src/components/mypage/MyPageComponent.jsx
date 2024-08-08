@@ -3,82 +3,33 @@ import { Link } from "react-router-dom";
 import "./MyPageComponent.css";
 
 const MyPageComponent = () => {
-  const [name, setName] = useState("이세림");
-  const [email, setEmail] = useState("reems0815@sogang.ac.kr");
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEditClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleSaveClick = () => {
-    setIsEditing(false);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSaveClick();
-    }
-  };
-
   return (
     <div className="mypage-wrapper">
       <div className="header">
+        <img src="/imgs/footer_mypage.png" alt="Back" className="back-icon" />
         <h1>마이페이지</h1>
-        <img
-          src="/imgs/footer_mypage.png"
-          alt="Settings"
-          className="settings-icon"
-        />
       </div>
 
-      <div className="profile">
-        <img src="/tree.png" alt="Profile" className="profile-icon" />
-        <div className="profile-info">
-          <div className="name-edit-container">
-            {isEditing ? (
-              <input
-                type="text"
-                value={name}
-                onChange={handleNameChange}
-                onKeyDown={handleKeyDown}
-                className="name-input"
-              />
-            ) : (
-              <h2>{name}</h2>
-            )}
-            {isEditing ? (
-              <button onClick={handleSaveClick} className="save-button">
-                저장
-              </button>
-            ) : (
-              <button onClick={handleEditClick} className="edit-button">
-                수정
-              </button>
-            )}
-          </div>
-          <p>{email}</p>
-          <div className="profile-stats">
-            <span>P🌞</span>
-            <span>0</span>
-          </div>
-        </div>
-      </div>
       <ul className="options">
-        <li>
-          <Link to="/notice">공지사항</Link>
-        </li>
-        <li>
-          <Link to="/info">내 정보 관리</Link>
-        </li>
-        <li>
-          <Link to="/notification">알림 설정</Link>
-        </li>
+        <Link to="/notice">
+          <li>공지사항</li>
+        </Link>
+
+        <Link to="/info">
+          <li>내 정보 관리</li>
+        </Link>
+
+        <Link to="/notification">
+          <li>알림 설정</li>
+        </Link>
       </ul>
+
+      <div className="spacer"></div>
+
+      <div className="footer-links">
+        <Link to="/terms">약관 확인</Link>
+        <Link to="/unsubscribe">탈퇴하기</Link>
+      </div>
     </div>
   );
 };

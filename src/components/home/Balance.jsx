@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Balance.css";
 
 const Balance = () => {
@@ -9,10 +10,27 @@ const Balance = () => {
   ]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handleScroll = (e) => {
     const newIndex = Math.round(e.target.scrollLeft / e.target.clientWidth);
     setCurrentIndex(newIndex);
+  };
+
+  const handleClick = (country) => {
+    switch (country) {
+      case "KRW":
+        navigate("/krw/detail");
+        break;
+      case "USD":
+        navigate("/usd/detail");
+        break;
+      case "JPY":
+        navigate("/jpy/detail");
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -22,7 +40,11 @@ const Balance = () => {
       </div>
       <div className="balance-scroll" onScroll={handleScroll}>
         {exchangeRates.map((rate, index) => (
-          <div className="balance" key={index}>
+          <div
+            className={`balance ${index === currentIndex ? "active" : ""}`}
+            key={index}
+            onClick={() => handleClick(rate.country)}
+          >
             <img src={rate.flag} alt={`${rate.country} Flag`} />
             <div className="balance-amount">
               <span>{rate.amount}</span>
