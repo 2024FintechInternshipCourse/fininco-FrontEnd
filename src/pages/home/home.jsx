@@ -3,6 +3,7 @@ import Balance from "../../components/home/Balance";
 import ExchangeRateCard from "../../components/home/ExchangeRateCard";
 import RecentTransaction from "../../components/home/RecentTransaction";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -12,7 +13,9 @@ const Home = () => {
           <i className="bell-icon">🔔</i>
         </div>
         <div className="menu">
-          <i className="menu-icon">☰</i>
+          <Link to="/category" className="menu-icon">
+            ☰
+          </Link>
         </div>
       </div>
       <Balance />

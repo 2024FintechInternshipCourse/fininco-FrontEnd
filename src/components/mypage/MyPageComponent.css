@@ -1,94 +1,28 @@
 .mypage-wrapper {
   background-color: #ffffff;
-  height: 92vh;
-  overflow-y: auto;
+  height: 84vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.back-icon,
-.settings-icon {
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.back-icon {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .header h1 {
   font-size: 18px;
-}
-
-.profile {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #72e4eb;
-  color: #333333;
-}
-
-.profile-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.profile-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.name-edit-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.name-input {
-  font-size: 16px;
-  padding: 5px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-}
-
-.edit-button,
-.save-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ffffff;
-  color: #72e4eb;
-  cursor: pointer;
-}
-
-.edit-button:hover,
-.save-button:hover {
-  background-color: #f0f0f0;
-}
-
-.profile-info h2 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.profile-info p {
-  margin: 0;
-  margin-top: 5px;
-  font-size: 14px;
-}
-
-.profile-stats {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 5px;
-}
-
-.profile-stats span {
-  font-size: 12px;
-  background-color: #f6f6f6;
-  color: #72e4eb;
-  padding: 2px 5px;
-  border-radius: 5px;
+  font-weight: bold;
 }
 
 .options {
@@ -98,11 +32,36 @@
 }
 
 .options li {
-  padding: 15px 20px;
-  border-bottom: 1px solid #afafaf;
+  padding: 15px 0;
+  /* border-bottom: 1px solid #afafaf; */
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 18px;
   cursor: pointer;
 }
 
 .options li:hover {
   background-color: #f6f6f6;
+}
+
+.options a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #afafaf;
+  font-size: 14px;
+  margin-top: 54vh;
 }

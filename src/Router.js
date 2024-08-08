@@ -14,6 +14,11 @@ import LogIn from "./pages/login";
 import SignUp from "./pages/sign-up";
 import TransactionDetail from "./components/home/TransactionDetail/TransactionDetail";
 import SpendingReport from "./components/home/TransactionDetail/SpendingReport";
+import Category from "./components/home/Category/Category";
+import KrwDetail from "./components/home/BalanceDetail/KrwDetail";
+import Unsubscribe from "./components/mypage/Unsubscribe";
+import JpyDetail from "./components/home/BalanceDetail/JpyDetail";
+import UsdDetail from "./components/home/BalanceDetail/UsdDetail";
 
 const Router = createBrowserRouter([
   {
@@ -79,6 +84,26 @@ const Router = createBrowserRouter([
       {
         path: "/spending/report",
         element: <SpendingReport />,
+      },
+      {
+        path: "/category",
+        element: <Category />,
+      },
+      {
+        path: "/krw/detail",
+        element: <KrwDetail />,
+      },
+      {
+        path: "/jpy/detail",
+        element: <JpyDetail />,
+      },
+      {
+        path: "/usd/detail",
+        element: <UsdDetail />,
+      },
+      {
+        path: "/unsubscribe",
+        element: <Unsubscribe />,
       },
     ],
   },
