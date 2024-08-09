@@ -5,7 +5,6 @@ import MainLayout from "./components/common/main-layout";
 import ProtectedRoute from "./components/common/protected-route";
 import MyPage from "./pages/mypage/mypage-setting";
 import NoLayout from "./components/common/no-layout";
-import ExchangeRatePage from "./pages/ExchangeRate/ExchangeRatePage";
 import Notice from "./components/mypage/Notice";
 import MyInfo from "./components/mypage/MyInfo";
 import Notification from "./components/mypage/Notification";
@@ -19,6 +18,10 @@ import KrwDetail from "./components/home/BalanceDetail/KrwDetail";
 import Unsubscribe from "./components/mypage/Unsubscribe";
 import JpyDetail from "./components/home/BalanceDetail/JpyDetail";
 import UsdDetail from "./components/home/BalanceDetail/UsdDetail";
+import USD_ExchangeRate from "./components/ExchangeRate/USD_ExchangeRate";
+import JPY_ExchangeRate from "./components/ExchangeRate/JPY_ExchangeRate";
+import LoadingScreen from "./components/common/loading-screen";
+import LandingScreen from "./components/common/loading-screen";
 
 const Router = createBrowserRouter([
   {
@@ -58,8 +61,12 @@ const Router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/exchange/rate",
-        element: <ExchangeRatePage />,
+        path: "/usd/exchange/rate",
+        element: <USD_ExchangeRate />,
+      },
+      {
+        path: "/jpy/exchange/rate",
+        element: <JPY_ExchangeRate />,
       },
       {
         path: "/notice",
@@ -104,6 +111,10 @@ const Router = createBrowserRouter([
       {
         path: "/unsubscribe",
         element: <Unsubscribe />,
+      },
+      {
+        path: "/landing",
+        element: <LandingScreen />,
       },
     ],
   },

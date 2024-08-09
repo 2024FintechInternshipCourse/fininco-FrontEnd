@@ -7,6 +7,11 @@
   padding: 10px;
   margin: 10px;
   width: 100px;
+  cursor: default;
+}
+
+.exchange-rate-card:hover {
+  cursor: pointer;
 }
 
 .currency {

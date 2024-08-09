@@ -1,11 +1,14 @@
 import React from "react";
-import "./ExchangeRate.css";
+import { Link } from "react-router-dom";
+import "./USD_ExchangeRate.css";
 
-const ExchangeRate = () => {
+const USD_ExchangeRate = () => {
   return (
     <div className="exchange-rate">
       <div className="header">
-        <button className="back-button">&lt;</button>
+        <Link to="/" className="back-button">
+          &lt;
+        </Link>
         <span>실시간 환율</span>
       </div>
       <div className="exchange-info">
@@ -69,4 +72,4 @@ const ExchangeRate = () => {
   );
 };
 
-export default ExchangeRate;
+export default USD_ExchangeRate;
