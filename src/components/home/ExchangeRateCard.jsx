@@ -1,9 +1,16 @@
 import React from "react";
 import "./ExchangeRateCard.css";
 
-const ExchangeRateCard = ({ currency, rate, change, changePercent, flag }) => {
+const ExchangeRateCard = ({
+  currency,
+  rate,
+  change,
+  changePercent,
+  flag,
+  onClick,
+}) => {
   return (
-    <div className="exchange-rate-card">
+    <div className="exchange-rate-card" onClick={onClick}>
       <div className="currency">
         <img src={flag} alt={`${currency} Flag`} />
         <span>{currency}</span>

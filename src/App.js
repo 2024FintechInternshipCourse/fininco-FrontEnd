@@ -7,9 +7,7 @@ import { RouterProvider } from "react-router-dom";
 
 function App() {
   const [isLoding, setLoading] = useState(false);
-  const init = async () => {
-    //사용자가 로그인을 했냐 안했냐를 확인
-  };
+  const init = async () => {};
   useEffect(() => {
     init();
   }, []);

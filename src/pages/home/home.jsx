@@ -6,16 +6,29 @@ import "./home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const handleUsdClick = () => {
+    window.location.href = "/usd/exchange/rate";
+  };
+  const handleJpyClick = () => {
+    window.location.href = "/jpy/exchange/rate";
+  };
+
   return (
     <div className="home">
       <div className="header">
-        <div className="notifications">
-          <i className="bell-icon">🔔</i>
-        </div>
-        <div className="menu">
-          <Link to="/category" className="menu-icon">
-            ☰
-          </Link>
+        <div className="header-right">
+          <div className="notifications">
+            <img
+              src="/imgs/notice_icon.png"
+              alt="Notifications"
+              className="icon"
+            />
+          </div>
+          <div className="menu">
+            <Link to="/category">
+              <img src="/imgs/category_icon.png" alt="Menu" className="icon" />
+            </Link>
+          </div>
         </div>
       </div>
       <Balance />
@@ -28,6 +41,7 @@ const Home = () => {
             change="1.00"
             changePercent="0.07"
             flag="/imgs/USD_Flag.jpg"
+            onClick={handleUsdClick}
           />
           <ExchangeRateCard
             currency="JPY"
@@ -35,6 +49,7 @@ const Home = () => {
             change="0.32"
             changePercent="-1.37"
             flag="/imgs/JPY_Flag.png"
+            onClick={handleJpyClick}
           />
         </div>
       </div>
