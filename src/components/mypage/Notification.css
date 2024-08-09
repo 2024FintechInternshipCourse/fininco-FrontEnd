@@ -21,6 +21,7 @@
 .notification-settings-header span {
   font-size: 18px;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .notification-settings-list {
