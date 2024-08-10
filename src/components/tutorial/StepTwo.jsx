@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./StepTwo.css";
 
 const StepTwo = () => {
   const handleKakaoLogin = () => {
     const clientId = "f085cf45c0ed4952c548225913ac2f89"; // 카카오에서 발급받은 앱의 REST API 키
-    const redirectUri = "https://tripguard.netlify.app/tutorial "; // 카카오 인증 후 돌아올 콜백 URL
+    const redirectUri = "https://tripguard.netlify.app/tutorial"; // 카카오 인증 후 돌아올 콜백 URL (공백 제거)
     const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=profile_nickname`;
 
     window.location.href = kakaoAuthUrl;
@@ -15,7 +15,6 @@ const StepTwo = () => {
     return urlParams.get(param);
   };
 
-  // Effect to check for the 'code' in the URL and send it to the API server
   useEffect(() => {
     const code = getQueryParam("code");
     if (code) {
