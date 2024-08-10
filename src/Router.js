@@ -20,7 +20,6 @@ import JpyDetail from "./components/home/BalanceDetail/JpyDetail";
 import UsdDetail from "./components/home/BalanceDetail/UsdDetail";
 import USD_ExchangeRate from "./components/ExchangeRate/USD_ExchangeRate";
 import JPY_ExchangeRate from "./components/ExchangeRate/JPY_ExchangeRate";
-import LoadingScreen from "./components/common/loading-screen";
 import LandingScreen from "./components/common/loading-screen";
 import TutorialPage from "./pages/Tutorial/tutorial";
 import USD_ExchangeAlert from "./components/ExchangeRate/USD_ExchangeAlert";
