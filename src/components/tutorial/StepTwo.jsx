@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import "./StepTwo.css";
 
 const StepTwo = () => {
+  const clientId = "f085cf45c0ed4952c548225913ac2f89"; // 여기에 클라이언트 ID를 넣으세요
+
   const handleKakaoLogin = () => {
-    const clientId = "f085cf45c0ed4952c548225913ac2f89"; // 카카오에서 발급받은 앱의 REST API 키
-    const redirectUri = "https://tripguard.netlify.app/tutorial"; // 카카오 인증 후 돌아올 콜백 URL (공백 제거)
+    const redirectUri = "https://tripguard.netlify.app/tutorial";
     const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=profile_nickname`;
 
     window.location.href = kakaoAuthUrl;
@@ -18,22 +19,22 @@ const StepTwo = () => {
   useEffect(() => {
     const code = getQueryParam("code");
     if (code) {
-      // Send the code to your API server
+      // 받은 인가 코드를 API 서버에 전달
       fetch("https://tripguard.netlify.app/api/v1/user/kakao/callback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ code }),
+        body: JSON.stringify({ code }), // 인가 코드를 body에 포함시킴
       })
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
-          // Handle successful response
+          // 성공적인 응답 처리
         })
         .catch((error) => {
           console.error("Error:", error);
-          // Handle error
+          // 에러 처리
         });
     }
   }, []);
