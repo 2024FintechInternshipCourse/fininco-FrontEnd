@@ -75,6 +75,28 @@
   margin: 5px 15px;
 }
 
+.icons-container {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.bell-link {
+  display: flex;
+  align-items: center;
+}
+
+.bell-icon {
+  width: 16px;
+  height: 18px;
+  margin-right: 7px;
+}
+
+.question-icon {
+  width: 16px;
+  height: 16px;
+}
+
 .exchange-actions {
   display: flex;
   justify-content: space-between;
@@ -97,21 +119,21 @@
 .sell span:first-child,
 .buy span:first-child {
   font-weight: bold;
-  font-size: 16px; /* Slightly smaller */
+  font-size: 16px;
 }
 
 .sell span:last-child,
 .buy span:last-child {
   font-weight: bold;
-  font-size: 24px; /* Slightly larger */
+  font-size: 24px;
 }
 
 .buttons {
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 15px 0px; /* Adjusted margin to remove margin-bottom */
-  padding-bottom: 15px; /* Added padding-bottom to create space */
+  margin: 15px 0px;
+  padding-bottom: 15px;
   border-bottom: 2px solid #000000;
 }
 

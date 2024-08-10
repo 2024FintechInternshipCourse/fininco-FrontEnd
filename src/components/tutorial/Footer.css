@@ -1,0 +1,53 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  max-width: 56vh;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0vh;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.footer-container .back-button,
+.footer-container .next-button {
+  background-color: #72e4eb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.back-button:disabled,
+.next-button:disabled {
+  background-color: #c8eaeb;
+  cursor: not-allowed;
+}
+
+.step-indicator {
+  display: flex;
+  gap: 5px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #72e4eb;
+  border-radius: 50%;
+}
+
+.indicator-dot.active {
+  background-color: #72e4eb !important; /* Ensures the active dot color */
+}

@@ -22,6 +22,10 @@ import USD_ExchangeRate from "./components/ExchangeRate/USD_ExchangeRate";
 import JPY_ExchangeRate from "./components/ExchangeRate/JPY_ExchangeRate";
 import LoadingScreen from "./components/common/loading-screen";
 import LandingScreen from "./components/common/loading-screen";
+import TutorialPage from "./pages/Tutorial/tutorial";
+import USD_ExchangeAlert from "./components/ExchangeRate/USD_ExchangeAlert";
+import KakaoCallback from "./components/KakaoCallback";
+import JPY_ExchangeAlert from "./components/ExchangeRate/JPY_ExchangeAlert";
 
 const Router = createBrowserRouter([
   {
@@ -115,6 +119,22 @@ const Router = createBrowserRouter([
       {
         path: "/landing",
         element: <LandingScreen />,
+      },
+      {
+        path: "/tutorial",
+        element: <TutorialPage />,
+      },
+      {
+        path: "/usd/exchangerate/alert",
+        element: <USD_ExchangeAlert />,
+      },
+      {
+        path: "/jpy/exchangerate/alert",
+        element: <JPY_ExchangeAlert />,
+      },
+      {
+        path: "/kakao/callback",
+        element: <KakaoCallback />,
       },
     ],
   },

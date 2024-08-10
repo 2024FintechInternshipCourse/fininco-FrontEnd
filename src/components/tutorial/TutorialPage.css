@@ -1,0 +1,74 @@
+.tutorial-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.step-container {
+  margin: 20px 0;
+  height: 84vh;
+}
+
+.step-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.step-list {
+  list-style: none;
+  padding: 0;
+}
+
+.step-item {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.nickname-input {
+  width: 80%;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 1em;
+}
+
+.step-tip {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.back-button,
+.next-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.step-indicator {
+  display: flex;
+  gap: 5px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.indicator-dot.active {
+  background-color: green;
+}
