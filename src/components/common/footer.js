@@ -11,7 +11,7 @@ const Footer = () => {
         <img src="/imgs/footer_home.png" alt="Home Icon" />
         <span>홈</span>
       </Link>
-      <Link to="/question/list" className="footer-item">
+      <Link to="/purchase" className="footer-item">
         <img src="/imgs/footer_qr.png" alt="List Icon" />
         <span>결제하기</span>
       </Link>
