@@ -21,6 +21,16 @@ const JPY_ExchangeRate = () => {
           <div className="change">
             <span className="amount">0.32</span>
             <span className="percentage">-1.37%</span>
+            <div className="icons-container">
+              <Link to="/usd/exchangerate/alert" className="bell-link">
+                <img src="/imgs/bell.png" alt="bell" className="bell-icon" />
+              </Link>
+              <img
+                src="/imgs/question.png"
+                alt="question"
+                className="question-icon"
+              />
+            </div>
           </div>
         </div>
       </div>
