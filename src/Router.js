@@ -131,10 +131,7 @@ const Router = createBrowserRouter([
         path: "/jpy/exchangerate/alert",
         element: <JPY_ExchangeAlert />,
       },
-      {
-        path: "/kakao/callback",
-        element: <KakaoCallback />,
-      },
+
       {
         path: "/purchase",
         element: <Purchase />,
