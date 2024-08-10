@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./KrwDetail.css";
-import { useState } from "react";
 
 const transactionsData = [
   {
@@ -97,6 +96,32 @@ const KrwDetail = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("전체");
   const filteredTransactions = getFilteredTransactions(selectedPeriod);
 
+  const [isUSD, setIsUSD] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsUSD((prevIsUSD) => !prevIsUSD);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const currencyInfo = isUSD
+    ? {
+        flagSrc: "/imgs/USD_Flag.jpg",
+        currencyName: "미국 USD",
+        currencyRate: "1385.50",
+        changeValue: "▲ 1.00",
+        changePercent: "+0.07%",
+      }
+    : {
+        flagSrc: "/imgs/JPY_Flag.png",
+        currencyName: "일본 JPY",
+        currencyRate: "929.22",
+        changeValue: "▲ 0.50",
+        changePercent: "+0.05%",
+      };
+
   return (
     <div className="krw-detail">
       <header className="krw-header">
@@ -108,15 +133,15 @@ const KrwDetail = () => {
 
       <div className="currency-info">
         <img
-          src="/imgs/USD_Flag.jpg"
-          alt="USD Flag"
+          src={currencyInfo.flagSrc}
+          alt={`${currencyInfo.currencyName} Flag`}
           className="currency-flag"
         />
-        <div className="currency-name">미국 USD</div>
-        <div className="currency-rate">1385.50</div>
+        <div className="currency-name">{currencyInfo.currencyName}</div>
+        <div className="currency-rate">{currencyInfo.currencyRate}</div>
         <div className="currency-change">
-          <div className="change-value">▲ 1.00</div>
-          <div className="change-percent">+0.07%</div>
+          <div className="change-value">{currencyInfo.changeValue}</div>
+          <div className="change-percent">{currencyInfo.changePercent}</div>
         </div>
       </div>
 

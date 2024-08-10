@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./JpyDetail.css";
-import { useState } from "react";
+import "./KrwDetail.css";
 
 const transactionsData = [
   {
     date: "2024.08.08",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
+    flagAlt: "KRW Flag",
     type: "KRW → JPY",
     rate: "적용 환율: 929.22원",
     time: "12:30",
@@ -17,7 +16,7 @@ const transactionsData = [
   {
     date: "2024.08.06",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
+    flagAlt: "KRW Flag",
     type: "KRW → JPY",
     rate: "적용 환율: 929.22원",
     time: "12:30",
@@ -27,8 +26,8 @@ const transactionsData = [
   {
     date: "2024.07.24",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
-    type: "USD → JPY",
+    flagAlt: "KRW Flag",
+    type: "KRW → JPY",
     rate: "적용 환율: 1394.24원",
     time: "12:30",
     amount: "100,852 원",
@@ -37,8 +36,8 @@ const transactionsData = [
   {
     date: "2024.06.24",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
-    type: "USD → JPY",
+    flagAlt: "KRW Flag",
+    type: "KRW → JPY",
     rate: "적용 환율: 1384.24원",
     time: "12:30",
     amount: "100,852 원",
@@ -47,7 +46,7 @@ const transactionsData = [
   {
     date: "2024.05.24",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
+    flagAlt: "KRW Flag",
     type: "KRW → JPY",
     rate: "적용 환율: 929.22원",
     time: "12:30",
@@ -57,7 +56,7 @@ const transactionsData = [
   {
     date: "2024.01.23",
     flagSrc: "/imgs/JPY_Flag.png",
-    flagAlt: "JPY Flag",
+    flagAlt: "KRW Flag",
     type: "KRW → JPY",
     rate: "적용 환율: 929.22원",
     time: "12:30",
@@ -93,9 +92,35 @@ const getFilteredTransactions = (period) => {
   });
 };
 
-const JpyDetail = () => {
+const KrwDetail = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("전체");
   const filteredTransactions = getFilteredTransactions(selectedPeriod);
+
+  const [isUSD, setIsUSD] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsUSD((prevIsUSD) => !prevIsUSD);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const currencyInfo = isUSD
+    ? {
+        flagSrc: "/imgs/USD_Flag.jpg",
+        currencyName: "미국 USD",
+        currencyRate: "1385.50",
+        changeValue: "▲ 1.00",
+        changePercent: "+0.07%",
+      }
+    : {
+        flagSrc: "/imgs/JPY_Flag.png",
+        currencyName: "일본 JPY",
+        currencyRate: "929.22",
+        changeValue: "▲ 0.50",
+        changePercent: "+0.05%",
+      };
 
   return (
     <div className="krw-detail">
@@ -108,15 +133,15 @@ const JpyDetail = () => {
 
       <div className="currency-info">
         <img
-          src="/imgs/USD_Flag.jpg"
-          alt="USD Flag"
+          src={currencyInfo.flagSrc}
+          alt={`${currencyInfo.currencyName} Flag`}
           className="currency-flag"
         />
-        <div className="currency-name">미국 USD</div>
-        <div className="currency-rate">1385.50</div>
+        <div className="currency-name">{currencyInfo.currencyName}</div>
+        <div className="currency-rate">{currencyInfo.currencyRate}</div>
         <div className="currency-change">
-          <div className="change-value">▲ 1.00</div>
-          <div className="change-percent">+0.07%</div>
+          <div className="change-value">{currencyInfo.changeValue}</div>
+          <div className="change-percent">{currencyInfo.changePercent}</div>
         </div>
       </div>
 
@@ -164,4 +189,4 @@ const JpyDetail = () => {
   );
 };
 
-export default JpyDetail;
+export default KrwDetail;

@@ -26,6 +26,7 @@ import TutorialPage from "./pages/Tutorial/tutorial";
 import USD_ExchangeAlert from "./components/ExchangeRate/USD_ExchangeAlert";
 import KakaoCallback from "./components/KakaoCallback";
 import JPY_ExchangeAlert from "./components/ExchangeRate/JPY_ExchangeAlert";
+import Purchase from "./components/Payment/Purchase";
 
 const Router = createBrowserRouter([
   {
@@ -135,6 +136,10 @@ const Router = createBrowserRouter([
       {
         path: "/kakao/callback",
         element: <KakaoCallback />,
+      },
+      {
+        path: "/purchase",
+        element: <Purchase />,
       },
     ],
   },

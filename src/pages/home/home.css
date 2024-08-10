@@ -14,13 +14,13 @@
 
 .header-right {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-left: 43vh;
 }
 
 .icon {
   width: 24px;
-  height: 28px;
+  height: 24px;
   cursor: pointer;
 }
 
