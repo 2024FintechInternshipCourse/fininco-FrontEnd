@@ -19,7 +19,8 @@ function App() {
   );
 }
 const AppContainer = styled.div`
-  width: 56.25vh;
+  width: 100%;
+  max-width: 56.25vh;
   height: 100vh;
   overflow: scroll;
   margin: 0 auto;
