@@ -58,22 +58,25 @@
   margin-top: 20px;
 }
 
-.cancel-button,
-.confirm-button {
+.cancel-button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
-}
-
-.cancel-button {
   background-color: #b3e5fc;
+
   color: #000;
+  margin-right: 10px;
 }
 
 .confirm-button {
-  background-color: #b0bec5;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b3e5fc;
   color: #fff;
+  margin-right: 10px;
 }
 
 /* Modal styles */
@@ -105,9 +108,9 @@
 
 .modal-button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
 }
 

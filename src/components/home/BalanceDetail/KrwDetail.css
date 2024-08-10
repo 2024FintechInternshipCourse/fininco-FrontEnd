@@ -15,7 +15,7 @@
 .back-arrow {
   margin-right: 10px;
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .currency-info {
@@ -80,11 +80,11 @@
 }
 
 .transfer-button {
-  background-color: lightgray;
+  background-color: #e1e1e1;
 }
 
 .recharge-button {
-  background-color: lightblue;
+  background-color: #72e4eb;
 }
 
 .time-periods {
