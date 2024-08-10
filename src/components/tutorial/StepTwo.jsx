@@ -20,7 +20,7 @@ const StepTwo = () => {
     const code = getQueryParam("code");
     if (code) {
       // Send the code to your API server
-      fetch("https://yourdomain.com/api/v1/user/kakao/callback", {
+      fetch("https://tripguard.netlify.app/api/v1/user/kakao/callback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
