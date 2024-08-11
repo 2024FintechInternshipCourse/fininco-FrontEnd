@@ -18,7 +18,7 @@ const ExchangeRateCard = ({
       <div className="rate">{rate}</div>
       <div className={`change ${change > 0 ? "up" : "down"}`}>
         <span>{change}</span>
-        <span>{changePercent}%</span>
+        <span>{changePercent}</span>
       </div>
     </div>
   );

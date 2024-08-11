@@ -25,6 +25,16 @@ import TutorialPage from "./pages/Tutorial/tutorial";
 import USD_ExchangeAlert from "./components/ExchangeRate/USD_ExchangeAlert";
 import JPY_ExchangeAlert from "./components/ExchangeRate/JPY_ExchangeAlert";
 import Purchase from "./components/Payment/Purchase";
+import UsdSell from "./components/ExchangeRate/Sell/UsdSell";
+import JpySell from "./components/ExchangeRate/Sell/JpySell";
+import UsdSellConfirm from "./components/ExchangeRate/Sell/UsdSellConfirm";
+import JpySellConfirm from "./components/ExchangeRate/Sell/JpySellConfirm";
+import Confirm from "./components/ExchangeRate/Sell/Confirm";
+import UsdBuy from "./components/ExchangeRate/Buy/UsdBuy";
+import UsdBuyConfirm from "./components/ExchangeRate/Buy/UsdBuyConfirm";
+import JpyBuy from "./components/ExchangeRate/Buy/JpyBuy";
+import JpyBuyConfirm from "./components/ExchangeRate/Buy/JpyBuyConfirm";
+import ExchangeHistory from "./components/home/ExchangeHistory";
 
 const Router = createBrowserRouter([
   {
@@ -135,6 +145,46 @@ const Router = createBrowserRouter([
       {
         path: "/purchase",
         element: <Purchase />,
+      },
+      {
+        path: "/usd/sell",
+        element: <UsdSell />,
+      },
+      {
+        path: "/usd/sell/confirm",
+        element: <UsdSellConfirm />,
+      },
+      {
+        path: "/usd/buy",
+        element: <UsdBuy />,
+      },
+      {
+        path: "/usd/buy/confirm",
+        element: <UsdBuyConfirm />,
+      },
+      {
+        path: "/jpy/sell",
+        element: <JpySell />,
+      },
+      {
+        path: "/jpy/sell/confirm",
+        element: <JpySellConfirm />,
+      },
+      {
+        path: "/jpy/buy",
+        element: <JpyBuy />,
+      },
+      {
+        path: "/jpy/buy/confirm",
+        element: <JpyBuyConfirm />,
+      },
+      {
+        path: "/confirm",
+        element: <Confirm />,
+      },
+      {
+        path: "/exchange/history",
+        element: <ExchangeHistory />,
       },
     ],
   },

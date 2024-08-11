@@ -28,6 +28,34 @@ const transactions = [
     balance: 320000,
     icon: "/imgs/Car.png",
   },
+  {
+    date: new Date("2024-06-15T09:00:00"),
+    amount: -50000,
+    description: "식사",
+    balance: 270000,
+    icon: "/imgs/Item1.png",
+  },
+  {
+    date: new Date("2024-05-10T14:20:00"),
+    amount: -30000,
+    description: "쇼핑",
+    balance: 240000,
+    icon: "/imgs/Item1.png",
+  },
+  {
+    date: new Date("2024-04-05T18:00:00"),
+    amount: -40000,
+    description: "대중교통",
+    balance: 200000,
+    icon: "/imgs/Item1.png",
+  },
+  {
+    date: new Date("2024-03-20T10:30:00"),
+    amount: -100000,
+    description: "호텔",
+    balance: 100000,
+    icon: "/imgs/Item1.png",
+  },
 ];
 
 const renderCustomLegend = () => {
@@ -58,14 +86,50 @@ const TransactionDetail = () => {
     setIsModalOpen(true);
   };
 
-  const handleFilterTransactions = () => {
-    setFilteredTransactions(
-      transactions.filter(
-        (transaction) =>
-          transaction.date >= startDate && transaction.date <= endDate
-      )
-    );
-    setIsModalOpen(false);
+  const [activeFilter, setActiveFilter] = useState("전체");
+
+  const handleFilterTransactions = (period) => {
+    setActiveFilter(period); // Update active filter state
+    const now = new Date();
+    let filtered;
+
+    switch (period) {
+      case "1개월":
+        filtered = transactions.filter(
+          (transaction) =>
+            transaction.date >=
+            new Date(new Date().setMonth(now.getMonth() - 1))
+        );
+        break;
+      case "3개월":
+        filtered = transactions.filter(
+          (transaction) =>
+            transaction.date >=
+            new Date(new Date().setMonth(now.getMonth() - 3))
+        );
+        break;
+      case "6개월":
+        filtered = transactions.filter(
+          (transaction) =>
+            transaction.date >=
+            new Date(new Date().setMonth(now.getMonth() - 6))
+        );
+        break;
+      case "전체":
+        filtered = transactions;
+        break;
+      default:
+        filtered = transactions.filter(
+          (transaction) =>
+            transaction.date >= startDate && transaction.date <= endDate
+        );
+        break;
+    }
+
+    setFilteredTransactions(filtered);
+    if (period !== "직접 설정") {
+      setIsModalOpen(false);
+    }
   };
 
   return (
@@ -109,11 +173,45 @@ const TransactionDetail = () => {
         <div className="total-amount">총 사용 금액 100,000 ¥</div>
         <div className="transaction-history">
           <div className="transaction-history-header">
-            <span>기간</span>
-            <span>1개월</span>
-            <span>3개월</span>
-            <span>6개월</span>
-            <span onClick={handleDirectSettingClick} className="direct-setting">
+            <span
+              onClick={() => handleFilterTransactions("전체")}
+              style={{
+                fontWeight: activeFilter === "전체" ? "bold" : "normal",
+              }}
+            >
+              전체
+            </span>
+            <span
+              onClick={() => handleFilterTransactions("1개월")}
+              style={{
+                fontWeight: activeFilter === "1개월" ? "bold" : "normal",
+              }}
+            >
+              1개월
+            </span>
+            <span
+              onClick={() => handleFilterTransactions("3개월")}
+              style={{
+                fontWeight: activeFilter === "3개월" ? "bold" : "normal",
+              }}
+            >
+              3개월
+            </span>
+            <span
+              onClick={() => handleFilterTransactions("6개월")}
+              style={{
+                fontWeight: activeFilter === "6개월" ? "bold" : "normal",
+              }}
+            >
+              6개월
+            </span>
+            <span
+              onClick={handleDirectSettingClick}
+              style={{
+                fontWeight: activeFilter === "직접 설정" ? "bold" : "normal",
+              }}
+              className="direct-setting"
+            >
               직접 설정
             </span>
           </div>
@@ -124,6 +222,11 @@ const TransactionDetail = () => {
                 <span>{transaction.amount.toLocaleString()} ¥</span>
                 <span>{transaction.description}</span>
                 <span>
+                  {transaction.date.toLocaleDateString([], {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}{" "}
                   {transaction.date.toLocaleTimeString([], {
                     hour: "2-digit",
                     minute: "2-digit",
@@ -163,7 +266,7 @@ const TransactionDetail = () => {
               </div>
               <div
                 className="button-confirm"
-                onClick={handleFilterTransactions}
+                onClick={() => handleFilterTransactions("직접 설정")}
               >
                 확인
               </div>

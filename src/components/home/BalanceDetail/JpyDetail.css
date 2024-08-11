@@ -25,9 +25,9 @@
   background-color: azure;
 }
 
-.currency-flag {
-  width: 40px;
-  height: 40px;
+.currency-info .currency-flag {
+  width: 25px;
+  height: 25px;
   margin-right: 10px;
 }
 
