@@ -20,7 +20,9 @@ function App() {
 }
 const AppContainer = styled.div`
   width: 100%;
-  max-width: 56.25vh;
+  padding: 0px 10px;
+  // max-width: 56.25vh;
+  max-width: 412px;
   height: 100vh;
   overflow: scroll;
   margin: 0 auto;

@@ -6,12 +6,12 @@ const accountsData = [
   {
     bank: "국민은행",
     accountNumber: "123456-78-901234",
-    logo: "/imgs/kb_bank.png",
+    logo: "/imgs/kb.svg",
   },
   {
     bank: "우리은행",
     accountNumber: "123456-78-901234",
-    logo: "/imgs/woori_bank.png",
+    logo: "/imgs/woori.svg",
   },
 ];
 
@@ -50,26 +50,17 @@ const AccountList = () => {
               <span>{account.bank}</span>
               <span>{account.accountNumber}</span>
             </div>
-            <button
-              className="remove-button"
-              onClick={() => handleRemoveClick(account)}
-            >
-              X
-            </button>
+            <button onClick={() => handleRemoveClick(account)}>X</button>
           </div>
         ))}
       </div>
       {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal">
+        <div>
+          <div>
             <p>계좌를 삭제하시겠습니까?</p>
-            <div className="modal-buttons">
-              <button onClick={handleRemoveConfirm} className="confirm-button">
-                예
-              </button>
-              <button onClick={handleModalClose} className="close-button">
-                닫기
-              </button>
+            <div>
+              <button onClick={handleRemoveConfirm}>예</button>
+              <button onClick={handleModalClose}>닫기</button>
             </div>
           </div>
         </div>

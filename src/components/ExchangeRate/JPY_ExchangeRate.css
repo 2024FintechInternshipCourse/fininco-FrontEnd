@@ -9,7 +9,7 @@
   display: flex;
   width: 100%;
   padding: 10px;
-  justify-content: space-between;
+  justify-content: center; /* Change from space-between to center */
   align-items: center;
 }
 
@@ -23,9 +23,9 @@
 }
 
 .header span {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
-  margin-right: 36vh;
+  margin-right: 35vh;
   margin-top: 2px;
 }
 

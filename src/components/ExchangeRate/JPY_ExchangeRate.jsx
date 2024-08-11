@@ -1,8 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./JPY_ExchangeRate.css";
+import { useNavigate } from "react-router-dom";
 
 const JPY_ExchangeRate = () => {
+  const navigate = useNavigate();
+
+  const handleSellClick = () => {
+    navigate("/jpy/sell");
+  };
+  const handleBuyClick = () => {
+    navigate("/jpy/buy");
+  };
   return (
     <div className="exchange-rate">
       <div className="header">
@@ -45,8 +54,12 @@ const JPY_ExchangeRate = () => {
         </div>
       </div>
       <div className="buttons">
-        <button className="sell-button">외화 판매</button>
-        <button className="buy-button">외화 구매</button>
+        <button className="sell-button" onClick={handleSellClick}>
+          외화 판매
+        </button>
+        <button className="buy-button" onClick={handleBuyClick}>
+          외화 구매
+        </button>
       </div>
       <div className="history">
         <span>환전 내역</span>

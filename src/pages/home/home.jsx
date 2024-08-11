@@ -39,7 +39,7 @@ const Home = () => {
             currency="USD"
             rate="1,384.87"
             change="1.00"
-            changePercent="0.07"
+            changePercent="  0.07%"
             flag="/imgs/USD_Flag.jpg"
             onClick={handleUsdClick}
           />
@@ -47,9 +47,14 @@ const Home = () => {
             currency="JPY"
             rate="9.01"
             change="0.32"
-            changePercent="-1.37"
+            changePercent="-1.37%"
             flag="/imgs/JPY_Flag.png"
             onClick={handleJpyClick}
+          />
+          <ExchangeRateCard
+            rate="환전 내역 바로가기"
+            flag="/imgs/shortcut.png"
+            onClick={() => (window.location.href = "/exchange/history")}
           />
         </div>
       </div>

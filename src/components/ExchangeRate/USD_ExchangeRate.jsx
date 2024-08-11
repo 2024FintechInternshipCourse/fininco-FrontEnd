@@ -1,8 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./USD_ExchangeRate.css";
 
 const USD_ExchangeRate = () => {
+  const navigate = useNavigate();
+
+  const handleSellClick = () => {
+    navigate("/usd/sell");
+  };
+
+  const handleBuyClick = () => {
+    navigate("/usd/buy");
+  };
+
   return (
     <div className="exchange-rate">
       <div className="header">
@@ -45,8 +55,12 @@ const USD_ExchangeRate = () => {
         </div>
       </div>
       <div className="buttons">
-        <button className="sell-button">외화 판매</button>
-        <button className="buy-button">외화 구매</button>
+        <button className="sell-button" onClick={handleSellClick}>
+          외화 판매
+        </button>
+        <button className="buy-button" onClick={handleBuyClick}>
+          외화 구매
+        </button>
       </div>
       <div className="history">
         <span>환전 내역</span>

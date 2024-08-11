@@ -9,7 +9,7 @@ ${reset}
     box-sizing:border-box;
 }
 body{
-    font-family:"Pretendard";
+    font-family:"SUIT-Regular";
     background-color:black;
 }
 ::-webkit-scrollbar{
