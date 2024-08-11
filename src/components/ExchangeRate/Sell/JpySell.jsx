@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const JpySell = () => {
   const [jpyAmount, setJpyAmount] = useState("");
   const [targetRate, setTargetRate] = useState("");
-  const exchangeRate = 9.01; // 현재 적용 환율 (JPY to KRW)
+  const exchangeRate = 9.01; // 현재 적용 환율
   const navigate = useNavigate();
 
   const handleJpyChange = (e) => {
@@ -19,17 +19,25 @@ const JpySell = () => {
     const jpy = parseFloat(jpyAmount);
     const rate = parseFloat(targetRate) || exchangeRate;
 
-    // Calculate with 90% fee discount
-    const fee = 16; // Example fee in KRW per 100 JPY
-    const discountedFee = fee * 0.1; // 90% discount means you only pay 10% of the fee
+    const fee = 16;
+    const discountedFee = fee * 0.1; // 90% discount
     const finalAmount = jpy * rate - (jpy / 100) * discountedFee;
 
     return finalAmount.toFixed(2);
   };
 
   const handleNextClick = () => {
+    if (!targetRate) {
+      document.getElementById("targetRateInput").focus();
+      return;
+    }
+    if (!jpyAmount) {
+      document.getElementById("jpyAmountInput").focus();
+      return;
+    }
+
     navigate("/jpy/sell/confirm", {
-      state: { jpyAmount, targetRate }, // Correct state being passed
+      state: { jpyAmount, targetRate },
     });
   };
 
@@ -37,7 +45,7 @@ const JpySell = () => {
     <div style={styles.container}>
       <div style={styles.header}>
         <span style={styles.backArrow} onClick={() => window.history.back()}>
-          &larr;
+          &lt;
         </span>
         <h2 style={styles.title}>외화 판매</h2>
       </div>
@@ -51,6 +59,7 @@ const JpySell = () => {
         <label style={styles.label}>목표 환율</label>
         <input
           type="number"
+          id="targetRateInput"
           value={targetRate}
           onChange={handleTargetRateChange}
           placeholder="목표 환율"
@@ -61,6 +70,7 @@ const JpySell = () => {
       <div style={styles.inputGroup}>
         <input
           type="number"
+          id="jpyAmountInput"
           value={jpyAmount}
           onChange={handleJpyChange}
           placeholder="0"
