@@ -22,7 +22,7 @@ const AppContainer = styled.div`
   width: 100%;
   padding: 0px 10px;
   // max-width: 56.25vh;
-  max-width: 412px;
+  max-width: 56.25vh;
   height: 100vh;
   overflow: scroll;
   margin: 0 auto;

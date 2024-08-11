@@ -25,6 +25,15 @@ const UsdSell = () => {
   };
 
   const handleNextClick = () => {
+    if (!targetRate) {
+      document.getElementById("targetRateInput").focus();
+      return;
+    }
+    if (!usdAmount) {
+      document.getElementById("usdAmountInput").focus();
+      return;
+    }
+
     navigate("/usd/sell/confirm", {
       state: { usdAmount, targetRate },
     });
@@ -34,7 +43,7 @@ const UsdSell = () => {
     <div style={styles.container}>
       <div style={styles.header}>
         <span style={styles.backArrow} onClick={() => window.history.back()}>
-          &larr;
+          &lt;
         </span>
         <h2 style={styles.title}>외화 판매</h2>
       </div>
@@ -48,6 +57,7 @@ const UsdSell = () => {
         <label style={styles.label}>목표 환율</label>
         <input
           type="number"
+          id="targetRateInput"
           value={targetRate}
           onChange={handleTargetRateChange}
           placeholder="목표 환율"
@@ -58,6 +68,7 @@ const UsdSell = () => {
       <div style={styles.inputGroup}>
         <input
           type="number"
+          id="usdAmountInput"
           value={usdAmount}
           onChange={handleUsdChange}
           placeholder="0"
